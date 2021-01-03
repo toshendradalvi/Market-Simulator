@@ -1,0 +1,19 @@
+<div class="container">
+    <article class="sample-column">
+        <form class="input-group-form" [formGroup]="stockForm" (ngSubmit)="onSubmit()">
+            <h4>Add Stock</h4>
+            <div class="container">
+                <igx-input-group>
+                    <input igxInput name="stockCode" type="text" formControlName="stockCode" />
+                    <label igxLabel for="stockCode">Stock Code</label>
+                </igx-input-group>
+                <igx-input-group>
+                    <label igxLabel for="stockName">Stock Name</label>
+                    <input igxInput name="stockName" type="text" formControlName="stockName" />
+                </igx-input-group>
+                <button igxButton="raised" igxRipple type="submit" [disabled]="!stockForm.valid">Add Stock</button>
+            </div>
+        </form>
+    </article>
+    {{messageService.message}}
+</div>

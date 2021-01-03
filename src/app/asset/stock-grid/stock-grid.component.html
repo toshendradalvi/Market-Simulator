@@ -1,0 +1,13 @@
+<igx-grid  #grid1 id="grid1"  displayDensity="compact"  [rowHeight]="20"  [data]="stocks"  [autoGenerate]="false">
+    <igx-column field="name" [sortable]="true" [resizable]="true" header="Name"></igx-column>
+    <igx-column field="code" [sortable]="true" [resizable]="true" header="Code"></igx-column>
+    <igx-column field="price" [sortable]="true" [resizable]="true" header="Price "></igx-column>
+    <igx-column field="previousPrice" [sortable]="true" [resizable]="true" header="Last Price"></igx-column>
+    <igx-column field="Favorite" >
+        <ng-template igxCell let-cell="cell">
+            <button  igxButton="icon" (click)="toggleFavourite(cell)">
+                <igx-icon [color]="cell.value? 'red' : 'gray'">favorite</igx-icon>
+            </button>
+        </ng-template>
+    </igx-column>
+</igx-grid>
